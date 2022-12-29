@@ -1,3 +1,13 @@
 .elements__group {
-  max-height: 19px;
+  margin: 0;
+  background: no-repeat center url("../../../images/elements/Vector.svg");
+  width: 22px;
+  height: 19px;
+  transition: opacity 0.4s ease-in-out;
+  cursor: pointer;
+  border: none;
+}
+
+.elements__group:hover {
+  opacity: 0.5;
 }
