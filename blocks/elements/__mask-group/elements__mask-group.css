@@ -1,0 +1,12 @@
+.elements__mask-group {
+  margin: 0;
+  border-radius: 10px 10px 0px 0px;
+  width: 100%;
+  transition: opacity 0.2s ease-in;
+}
+
+.elements__mask-group:hover {
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  
+}
+
