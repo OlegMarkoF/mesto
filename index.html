@@ -7,6 +7,7 @@
   <meta name="autor" content="Олег Марков">
   <title>mesto</title>
 </head>
+
 <body>
   <div class="page">
     <header class="header">
@@ -19,7 +20,7 @@
         <img class="profile__avatar" src="./images/profile/image.png" alt="кусто">
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <button class="profile__edit-button" src="./images/profile/Edit_Button.svg" alt="кнопка" type="button"></button>
+          <button class="profile__edit-button" type="button"></button>
           <p class="profile__text">Исследователь океана</p>
         </div>
         <button class="profile__add-button" type="button"></button>
@@ -29,59 +30,65 @@
         <div class="elements__element">
           <img class="elements__mask-group" src="./images/elements/kirill-pershin-1088404-unsplash.png">
           <h2 class="elements__title">Карачаевск
+            <button class="elements__group elements__group_active" type="button"></button>
+          </h2>
+        </div>
+
+        <div class="elements__element">
+          <img class="elements__mask-group" src="./images/elements/kirill-pershin-1404681-unsplash.png">
+          <h2 class="elements__title">Гора Эльбрус
             <button class="elements__group" type="button"></button>
           </h2>
-
-        </div>
-
-        <div class="elements__element">
-          <img class="elements__mask-group" src="./images/elements/kirill-pershin-1404681-unsplash.png">
-          <h2 class="elements__title">Гора Эльбрус
-            <img class="elements__group" src="./images/elements/Vector.svg" alt="лайк">
-          </h2>
-
         </div>
 
         <div class="elements__element">
           <img class="elements__mask-group" src="./images/elements/kirill-pershin-1556355-unsplash.png">
           <h2 class="elements__title">Домбай
-            <img class="elements__group" src="./images/elements/Vector.svg" alt="лайк">
+            <button class="elements__group" type="button"></button>
           </h2>
-
         </div>
 
         <div class="elements__element">
           <img class="elements__mask-group" src="./images/elements/kirill-pershin-1404681-unsplash.png">
           <h2 class="elements__title">Гора Эльбрус
-            <img class="elements__group" src="./images/elements/Vector.svg" alt="лайк">
+            <button class="elements__group" type="button"></button>
           </h2>
-
         </div>
 
         <div class="elements__element">
           <img class="elements__mask-group" src="./images/elements/kirill-pershin-1556355-unsplash.png">
           <h2 class="elements__title">Домбай
-            <img class="elements__group" src="./images/elements/Vector.svg" alt="лайк">
+            <button class="elements__group" type="button"></button>
           </h2>
-
         </div>
 
         <div class="elements__element">
           <img class="elements__mask-group" src="./images/elements/kirill-pershin-1088404-unsplash.png">
-          <h2 class="elements__title">Карачаевск
-            <img class="elements__group" src="./images/elements/Vector.svg" alt="лайк">
+          <h2 class="elements__title">Карачаево-Черкессия
+            <button class="elements__group" type="button"></button>
           </h2>
-
         </div>
 
       </section>
-
     </main>
     
     <footer class="footer">
       © 2020 Mesto Russia
     </footer>
 
+    <section class="popup">
+      <form class="popup__container">
+        <div class="popup__content">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input class="popup__field" name="name" type="text" value="" placeholder="Жак-Ив Кусто" minlength="2" maxlength="100">
+          <input class="popup__field" name="about" type="text" value="" placeholder="Исследователь океана" minlength="2" maxlength="100" required>
+          <button class="popup__button-save" name ="button_name_save" type="submit">Сохранить</button>
+        </div>
+        <button class="popup__close" type="button"></button>
+      </form>
+    </section>
+
   </div>
+  <script src="./scripts/index.js"></script>
 </body>
 </html>

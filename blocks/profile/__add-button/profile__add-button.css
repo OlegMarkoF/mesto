@@ -18,7 +18,8 @@
 
 @media (max-width: 800px) {
   .profile__add-button {
-    margin: 36px 0 0 0;
+    background: no-repeat center url("../../../images/profile/AddButton.svg");
+    margin-top: 36px;
     width: 100%;
     justify-content: center;
     align-content: center;
