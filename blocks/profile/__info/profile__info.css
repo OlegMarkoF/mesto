@@ -1,19 +1,19 @@
 .profile__info {
   margin: 0;
-  /*max-width: 336px;
-  max-height: 73px;*/
+  max-width: 336px;
+  /*max-height: 73px;*/
   color: #fff;
-  display: grid;
-  grid-template-columns: 294px 24px;
+  display: flex;
+  flex-direction: column;
+  /*grid-template-columns: 294px 24px;
   grid-template-rows: auto;
-  gap: 16px 18px;
-  align-items: flex-end;
+  gap: 16px 18px;*/
+  position: relative;
+  justify-content: center;
   }
 
   @media screen and (max-width: 800px) {
   .profile__info {
     margin: 0 auto;
-    grid-template-columns: 1fr 18px;
-    grid-template-rows: auto;
   }
 }

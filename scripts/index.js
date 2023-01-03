@@ -1,6 +1,11 @@
+const groupActiveElement = document.querySelector('.elements__group');
+
 const popupElement = document.querySelector('.popup');
 const popupCloseButtonElement = popupElement.querySelector('.popup__close');
 const popupOpenButtonElement = document.querySelector('.profile__edit-button');
+
+const activeElement = function(event) {
+  groupActiveElement.classList.add('elements__group_active');}
 
 const openPopup = function(event) {
   popupElement.classList.add('popup_opened');
@@ -15,6 +20,8 @@ const closePopupByClickOnOverlay = function(event) {
     closePopup();
   }
 }
+
+groupActiveElement.addEventListener('click', activeElement);
 
 popupOpenButtonElement.addEventListener('click', openPopup);
 popupCloseButtonElement.addEventListener('click', closePopup);
