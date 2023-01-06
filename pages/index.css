@@ -8,6 +8,7 @@
 @import url(../blocks/header/__line/header__line.css);
 
 @import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__data/profile__data.css);
 @import url(../blocks/profile/__info/profile__info.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile/__title/profile__title.css);
@@ -21,11 +22,14 @@
 @import url(../blocks/elements/__title/elements__title.css);
 @import url(../blocks/elements/__group/elements__group.css);
 @import url(../blocks/elements/__group/_active/elements__group_active.css);
+@import url(../blocks/elements/__signature/elements__signature.css);
 
 @import url(../blocks/footer/footer.css);
 
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__field/popup__field.css);
+@import url(../blocks/popup/__field/_tipe/popup__field_tipe_name.css);
+@import url(../blocks/popup/__field/_tipe/popup__field_tipe_job.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__content/popup__content.css);
 @import url(../blocks/popup/__title/popup__title.css);

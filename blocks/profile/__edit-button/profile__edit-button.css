@@ -5,10 +5,7 @@
   width: 24px;
   height: 24px;
   transition: opacity 0.5s ease-in-out;
-  position: absolute;
-  right: 0;
-  top: 38px;
-  
+  margin-left: 18px;
 }
 
 .profile__edit-button:hover {
@@ -19,10 +16,13 @@
 
 @media (max-width: 800px) {
   .profile__edit-button {
-    top: 33px;
-    right: -28px;
+    background: no-repeat center url("../../../images/profile/Vector.svg");
+    margin-left: 10px;
     width: 18px;
     height: 18px;
+    position: absolute;
+    bottom: 7px;
+    right: -28px;
   }
 }
 

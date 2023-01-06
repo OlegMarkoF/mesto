@@ -1,19 +1,21 @@
 .profile {
   margin: 0 auto;
-  width: 100%; /* 880px  */
+  width: 100%;
+  max-height: 120px;
   display: grid;
   grid-template-columns: 120px 2fr 1fr;
   grid-template-rows: 1fr;
   gap: 0 30px;
-  align-content: center;
+  /*align-content: center;*/
 }
 
 
 @media screen and (max-width: 800px) {
   .profile {
+    max-height: 364px;
     grid-template-columns: auto;
     grid-template-rows: auto auto auto;
     gap: 0;
-    justify-content: center;
+    /*justify-content: center;*/
   }
 }
