@@ -1,6 +1,7 @@
 .elements__group {
+  padding: 0 15px;
   background: url("../../../images/elements/Vector.svg") center no-repeat;
-  background-size: 100%;
+  background-image: 100%;
   opacity: 1;
   width: 22px;
   height: 19px;
