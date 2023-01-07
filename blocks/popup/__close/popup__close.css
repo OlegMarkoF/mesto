@@ -3,7 +3,7 @@
   padding: 0;
   width: 32px;
   height: 32px;
-  background: url("../../../images/popup/CloseIcon.png") center no-repeat;
+  background: url("../../../images/popup/Close_Icon.svg") center no-repeat;
   position: absolute;
   top: -40px;
   right: -40px;
@@ -22,7 +22,7 @@
   .popup__close {
     width: 20px;
     height: 20px;
-    background: url("../../../images/popup/Close-Icon.png") center no-repeat;
+    background: url("../../../images/popup/CloseIconMobile.svg") center no-repeat;
     top: -36px;
     right: 0px;
   }

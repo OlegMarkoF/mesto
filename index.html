@@ -14,7 +14,9 @@
       </header>
       <main class="content">
         <section class="profile">
-          <img class="profile__avatar" src="./images/profile/image.png" alt="кусто">
+          <div class="profile__image">
+            <img class="profile__avatar" src="./images/profile/image.png" alt="кусто">
+          </div>
           <div class="profile__info">
             <div class="profile__data">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -26,42 +28,54 @@
         </section>
         <section class="elements">
           <div class="elements__element">
-            <img class="elements__mask-group" src="./images/elements/kirill-pershin-1088404-unsplash.png" alt="Карачаевск">
+            <div class="elements__image">
+              <img class="elements__mask-group" src="./images/elements/kirill-pershin-1088404-unsplash.png" alt="Карачаевск">
+            </div>
             <div class="elements__signature">
               <h2 class="elements__title">Карачаевск</h2>
               <button class="elements__group" type="button"></button>
             </div>
           </div>
           <div class="elements__element">
-            <img class="elements__mask-group" src="./images/elements/kirill-pershin-1404681-unsplash.png" alt="Эльбрус">
+            <div class="elements__image">
+              <img class="elements__mask-group" src="./images/elements/kirill-pershin-1404681-unsplash.png" alt="Эльбрус">
+            </div>
             <div class="elements__signature">
               <h2 class="elements__title">Гора Эльбрус</h2>
               <button class="elements__group" type="button"></button>
             </div>
           </div>
           <div class="elements__element">
-            <img class="elements__mask-group" src="./images/elements/kirill-pershin-1556355-unsplash.png" alt="Домбай">
+            <div class="elements__image">
+              <img class="elements__mask-group" src="./images/elements/kirill-pershin-1556355-unsplash.png" alt="Домбай">
+            </div>
             <div class="elements__signature">
               <h2 class="elements__title">Домбай</h2>
               <button class="elements__group" type="button"></button>
             </div>
           </div>
           <div class="elements__element">
-            <img class="elements__mask-group" src="./images/elements/kirill-pershin-1404681-unsplash.png" alt="Эльбрус">
+            <div class="elements__image">
+              <img class="elements__mask-group" src="./images/elements/kirill-pershin-1404681-unsplash.png" alt="Эльбрус">
+            </div>
             <div class="elements__signature">
               <h2 class="elements__title">Гора Эльбрус</h2>
               <button class="elements__group" type="button"></button>
             </div>
           </div>
           <div class="elements__element">
-            <img class="elements__mask-group" src="./images/elements/kirill-pershin-1556355-unsplash.png" alt="Домбай">
+            <div class="elements__image">
+              <img class="elements__mask-group" src="./images/elements/kirill-pershin-1556355-unsplash.png" alt="Домбай">
+            </div>
             <div class="elements__signature">
               <h2 class="elements__title">Домбай</h2>
               <button class="elements__group" type="button"></button>
             </div>
           </div>
           <div class="elements__element">
-            <img class="elements__mask-group" src="./images/elements/kirill-pershin-1088404-unsplash.png" alt="Карачаево">
+            <div class="elements__image">
+              <img class="elements__mask-group" src="./images/elements/kirill-pershin-1088404-unsplash.png" alt="Карачаево">
+            </div>
             <div class="elements__signature">
               <h2 class="elements__title">Карачаево-Черкессия</h2>
               <button class="elements__group" type="button"></button>
@@ -70,14 +84,14 @@
         </section>
       </main>
       <footer class="footer">
-        <p>© 2020 Mesto Russia</p>
+        <p class="footer__paragraph">© 2020 Mesto Russia</p>
       </footer>
       <!-- Popup -->
       <section class="popup">
         <div class="popup__container">
           <button class="popup__close" type="button"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
-          <form class="popup__content">
+          <form class="popup__content" name="form">
             <input class="popup__field popup__field_tipe_name" name="name" type="text" value="" placeholder="Ваше имя" required>
             <input class="popup__field popup__field_tipe_job" name="about" type="text" value="" placeholder="О себе" required>
             <button class="popup__button-save" name ="button_name_save" type="submit">Сохранить</button>
