@@ -26,12 +26,12 @@ popupCloseButtonElement.addEventListener('click', closePopup);
 popupElement.addEventListener('click', closePopupByClickOnOverlay);
 
 
-let formElement = document.querySelector('.popup__content');
-let nameInput = document.querySelector('.popup__field_tipe_name');
-let jobInput = document.querySelector('.popup__field_tipe_job');
+const formElement = document.querySelector('.popup__content');
+const nameInput = document.querySelector('.popup__field_tipe_name');
+const jobInput = document.querySelector('.popup__field_tipe_job');
 
-let profileTitleElement = document.querySelector('.profile__title');
-let profileTextElement = document.querySelector('.profile__text');
+const profileTitleElement = document.querySelector('.profile__title');
+const profileTextElement = document.querySelector('.profile__text');
 
 nameInput.value = profileTitleElement.textContent;
 jobInput.value = profileTextElement.textContent;
@@ -44,11 +44,7 @@ function handleFormSubmit (evt) {
     profileTitleElement.textContent = nameInput.value;
     profileTextElement.textContent = jobInput.value;
 
-    // Получите значение полей jobInput и nameInput из свойства value
-
-    // Выберите элементы, куда должны быть вставлены значения полей
-
-    // Вставьте новые значения с помощью textContent
+    closePopup();
 }
 
 formElement.addEventListener('submit', handleFormSubmit);
