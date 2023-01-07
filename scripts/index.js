@@ -28,20 +28,21 @@ popupElement.addEventListener('click', closePopupByClickOnOverlay);
 
 let formElement = document.querySelector('.popup__content');
 let nameInput = document.querySelector('.popup__field_tipe_name');
-console.log(nameInput.value);
 let jobInput = document.querySelector('.popup__field_tipe_job');
+
+let profileTitleElement = document.querySelector('.profile__title');
+let profileTextElement = document.querySelector('.profile__text');
+
+nameInput.value = profileTitleElement.textContent;
+jobInput.value = profileTextElement.textContent;
 
 function handleFormSubmit (evt) {
     evt.preventDefault();
 
-    let profileTitleElement = document.querySelector('.profile__title');
-    let profileTextElement = document.querySelector('.profile__text');
+    
 
     profileTitleElement.textContent = nameInput.value;
     profileTextElement.textContent = jobInput.value;
-
-    //document.querySelector('.nameInput').value;
-    //document.querySelector('.jobInput').value;
 
     // Получите значение полей jobInput и nameInput из свойства value
 
