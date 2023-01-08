@@ -10,6 +10,8 @@ const profileTextElement = document.querySelector('.profile__text');
 
 
 const openPopup = function(event) {
+  nameInput.value = profileTitleElement.textContent;
+  jobInput.value = profileTextElement.textContent;
   popupElement.classList.add('popup_opened');}
 
 const closePopup = function () {
@@ -21,8 +23,6 @@ const closePopupByClickOnOverlay = function(event) {
   }
 }
 
-nameInput.value = profileTitleElement.textContent;
-jobInput.value = profileTextElement.textContent;
 
 function handleFormSubmit (evt) {
     evt.preventDefault();

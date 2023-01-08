@@ -13,9 +13,10 @@
   -moz-text-size-adjust: 100%;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 200px) {
   .page {
-    min-width: 1024px;
+    min-width: 200px;
+    padding: 1px 0 1px;
   }
 }
 
@@ -26,9 +27,8 @@
   }
 }
 
-@media screen and (min-width: 200px) {
+@media screen and (min-width: 1024px) {
   .page {
-    min-width: 200px;
-    padding: 1px 0 1px;
+    min-width: 1024px;
   }
 }

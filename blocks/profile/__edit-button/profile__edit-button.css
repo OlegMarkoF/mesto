@@ -17,12 +17,11 @@
 @media (max-width: 800px) {
   .profile__edit-button {
     background: no-repeat center url("../../../images/profile/Vector.svg");
-    margin-left: 10px;
     width: 18px;
     height: 18px;
     position: absolute;
     bottom: 7px;
-    left: 188px;
+    right: -28px; /*я не придумал как решить эту проблему без знака "-". Так все работает :) */
   }
 }
 

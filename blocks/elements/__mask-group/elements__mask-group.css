@@ -2,7 +2,7 @@
   margin: 0;
   border-radius: 10px 10px 0px 0px;
   width: 100%;
-  height: 100%;
+  height: 282px;
   object-fit: cover;
   object-position: center;
   transition: opacity 0.2s ease-in;
