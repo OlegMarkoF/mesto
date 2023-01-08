@@ -21,7 +21,7 @@
     height: 18px;
     position: absolute;
     bottom: 7px;
-    right: -28px; /*я не придумал как решить эту проблему без знака "-". Так все работает :) */
+    right: -28px;
   }
 }
 
