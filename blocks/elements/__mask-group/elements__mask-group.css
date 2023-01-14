@@ -6,4 +6,5 @@
   object-fit: cover;
   object-position: center;
   transition: opacity 0.2s ease-in;
+  cursor: pointer;
 }

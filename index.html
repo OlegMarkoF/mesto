@@ -25,66 +25,59 @@
           <button class="profile__add-button" type="button"></button>
         </section>
         <section class="elements">
-          <div class="elements__element">
-            <img class="elements__mask-group" src="./images/elements/kirill-pershin-1088404-unsplash.png" alt="Карачаевск">
-            <div class="elements__signature">
-              <h2 class="elements__title">Карачаевск</h2>
-              <button class="elements__group" type="button"></button>
-            </div>
-          </div>
-          <div class="elements__element">
-            <img class="elements__mask-group" src="./images/elements/kirill-pershin-1404681-unsplash.png" alt="Эльбрус">
-            <div class="elements__signature">
-              <h2 class="elements__title">Гора Эльбрус</h2>
-              <button class="elements__group" type="button"></button>
-            </div>
-          </div>
-          <div class="elements__element">
-            <img class="elements__mask-group" src="./images/elements/kirill-pershin-1556355-unsplash.png" alt="Домбай">
-            <div class="elements__signature">
-              <h2 class="elements__title">Домбай</h2>
-              <button class="elements__group" type="button"></button>
-            </div>
-          </div>
-          <div class="elements__element">
-            <img class="elements__mask-group" src="./images/elements/kirill-pershin-1404681-unsplash.png" alt="Эльбрус">
-            <div class="elements__signature">
-              <h2 class="elements__title">Гора Эльбрус</h2>
-              <button class="elements__group" type="button"></button>
-            </div>
-          </div>
-          <div class="elements__element">
-            <img class="elements__mask-group" src="./images/elements/kirill-pershin-1556355-unsplash.png" alt="Домбай">
-            <div class="elements__signature">
-              <h2 class="elements__title">Домбай</h2>
-              <button class="elements__group" type="button"></button>
-            </div>
-          </div>
-          <div class="elements__element">
-            <img class="elements__mask-group" src="./images/elements/kirill-pershin-1088404-unsplash.png" alt="Карачаево">
-            <div class="elements__signature">
-              <h2 class="elements__title">Карачаево-Черкессия</h2>
-              <button class="elements__group" type="button"></button>
-            </div>
-          </div>
+          
         </section>
       </main>
       <footer class="footer">
         <p class="footer__paragraph">© 2020 Mesto Russia</p>
       </footer>
-      <!-- Popup -->
-      <section class="popup">
+      <!-- Popup Edit -->
+      <section class="popup popup_edit">
         <div class="popup__container">
-          <button class="popup__close" type="button"></button>
+          <button class="popup__close popup__close_edit" type="button"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
           <form class="popup__content" name="form">
             <input class="popup__field popup__field_tipe_name" name="name" type="text" value="" placeholder="Ваше имя" required>
             <input class="popup__field popup__field_tipe_job" name="about" type="text" value="" placeholder="О себе" required>
-            <button class="popup__button-save" name ="button_name_save" type="submit">Сохранить</button>
+            <button class="popup__button-save popup__button-save_change" name ="button_name_save" type="submit">Сохранить</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Popup Add -->
+      <section class="popup popup_add">
+        <div class="popup__container">
+          <button class="popup__close popup__close_add" type="button"></button>
+          <h2 class="popup__title">Новое место</h2>
+          <form class="popup__content" name="form">
+            <input class="popup__field popup__field_tipe_place" name="name" type="text" value="" placeholder="Название" required>
+            <input class="popup__field popup__field_tipe_link" name="about" type="text" value="" placeholder="Ссылка на картинку" required>
+            <button class="popup__button-save popup__button-save_add" name ="button_name_save" type="submit">Создать</button>
           </form>
         </div>
       </section>
     </div>
+
+    <!-- Popup image -->
+      <section class="popup popup_image">
+        <figure class="popup__figure">
+          <button class="popup__close popup__close_image" type="button"></button>
+          <img class="popup__photo" src="#" alt="">
+          <figcaption class="popup__signature"></figcaption>
+        </figure>
+      </section>
+
+      <template id="elements-template">
+        <div class="elements__element">
+          <button class="elements__delete" type="button"></button>
+          <img class="elements__mask-group" src="#" alt="здесь_могла_быть_ваша_реклама">
+          <div class="elements__signature">
+            <h2 class="elements__title"></h2>
+            <button class="elements__group" type="button"></button>
+          </div>
+      </div>
+      </template>
+
     <script src="./scripts/index.js"></script>
   </body>
 </html>
