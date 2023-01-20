@@ -4,6 +4,7 @@
   padding: 1px 0 1px;
   color: #FFFFFF;
   min-width: 320px;
+  min-height: 100vh;
   font-family: 'Inter', 'Arial', sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
