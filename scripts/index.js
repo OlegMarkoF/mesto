@@ -56,6 +56,7 @@ const initialCards = [
   }
 ];
 
+// Функция добавления карточек
 function createCard(item) {
   const cardElement = elementsTemplate.querySelector('.elements__element').cloneNode(true);
 
@@ -67,12 +68,15 @@ function createCard(item) {
   cardElement.querySelector('.elements__group').addEventListener('click', function(evt){ 
     evt.target.classList.toggle('elements__group_active');
   });
+  
   // Попап Image
   cardElement.querySelector('.elements__mask-group').addEventListener('click', function(evt){ 
     openPopup(popupImageElement);
-    popupPhoto.src = cardElement.querySelector('.elements__mask-group').src;
-    popupSignature.textContent = cardElement.querySelector('.elements__mask-group').alt;
+    popupPhoto.src = item.link;
+    popupSignature.textContent = item.name;
+    popupPhoto.alt = item.name;
   });
+
   // Удаление карточки
   cardElement.querySelector('.elements__delete').addEventListener('click', function(evt){
     cardElement.remove();
@@ -86,37 +90,15 @@ initialCards.forEach(function (item) {
   sectionElements.append(createCard(item));
 })
 
-
-// Добавление карточки через Попап
+// Добавление карточки через Popup
 cardFormSubmit.addEventListener('submit', function(evt) {
   evt.preventDefault();
-  const addCard = elementsTemplate.querySelector('.elements__element').cloneNode(true);
+  const newCard = createCard({name: placeInput.value, link: linkInput.value});
 
-  addCard.querySelector('.elements__title').textContent = placeInput.value;
-  addCard.querySelector('.elements__mask-group').src = linkInput.value;
-  addCard.querySelector('.elements__mask-group').alt = placeInput.value;
-  
-  // Лайк
-  addCard.querySelector('.elements__group').addEventListener('click', function(evt){ 
-    evt.target.classList.toggle('elements__group_active');
-    });
-  // Попап Image
-  addCard.querySelector('.elements__mask-group').addEventListener('click', function(evt){ 
-    openPopup(popupImageElement);
-    popupPhoto.src = addCard.querySelector('.elements__mask-group').src;
-    popupSignature.textContent = addCard.querySelector('.elements__mask-group').alt;
-    });
-  // Удаление карточки
-  addCard.querySelector('.elements__delete').addEventListener('click', function(evt){
-    addCard.remove();
-  });
-  sectionElements.prepend(addCard);
+  sectionElements.prepend(newCard);
   closePopup(popupAddElement);
   evt.target.reset();
 })
-
-
-
 
 // Данные профиля = данные попап
 function handleFormSubmit(evt) {
@@ -139,7 +121,7 @@ function closePopup(popup) {
 
 //Функии закрытия попап по Overlay
 function closePopupByClickOnOverlay(evt) {
-  if (event.target == event.currentTarget) {
+  if (evt.target == evt.currentTarget) {
     closePopup(popupEditElement);
     closePopup(popupAddElement);
     closePopup(popupImageElement);}
