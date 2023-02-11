@@ -14,5 +14,5 @@
 }
 
 .popup__field:invalid {
-  border-bottom-color: #f00
+  border-bottom-color: #f00;
 }

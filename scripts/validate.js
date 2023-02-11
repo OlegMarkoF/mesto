@@ -4,11 +4,6 @@ const formValidationConfig = {
   inputErrorClass: 'popup__field_type_error',
 };
 
-//const formElement = document.querySelectorAll('.popup__content');
-//const formInput = document.querySelectorAll('.popup__field');
-//const formError = formElement.querySelector(`.${formInput.id}-error`);
-//const formButton = document.querySelectorAll('.popup__button-save');
-
 // Добавляем класс с ошибкой
 function showInputError(formElement, formInput, errorMessage) {
   const formError = formElement.querySelector(`.${formInput.id}-error`);
