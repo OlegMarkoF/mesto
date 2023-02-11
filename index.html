@@ -37,9 +37,30 @@
         <div class="popup__container">
           <button class="popup__close popup__close_edit" type="button"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
-          <form class="popup__content popup__content_tipe_edit" name="form">
-            <input class="popup__field popup__field_tipe_name" name="name" type="text" value="" placeholder="Ваше имя" required>
-            <input class="popup__field popup__field_tipe_job" name="about" type="text" value="" placeholder="О себе" required>
+          <form class="popup__content popup__content_tipe_edit" name="form" novalidate>
+
+            <input class="popup__field popup__field_tipe_name"
+              id="name-input"
+              name="name"
+              type="text"
+              value=""
+              placeholder="Ваше имя"
+              minlength="2"
+              maxlength="40"
+              required>
+              <span class="name-input-error popup__field_type_error"></span>
+
+            <input class="popup__field popup__field_tipe_job"
+              id="about-input"
+              name="about"
+              type="text"
+              value=""
+              placeholder="О себе"
+              minlength="2"
+              maxlength="200"
+              required>
+              <span class="about-input-error popup__field_type_error"></span>
+
             <button class="popup__button-save popup__button-save_change" name ="button_name_save" type="submit">Сохранить</button>
           </form>
         </div>
@@ -50,9 +71,28 @@
         <div class="popup__container">
           <button class="popup__close popup__close_add" type="button"></button>
           <h2 class="popup__title">Новое место</h2>
-          <form class="popup__content popup__content_tipe_add" name="form">
-            <input class="popup__field popup__field_tipe_place" name="name" type="text" value="" placeholder="Название" required>
-            <input class="popup__field popup__field_tipe_link" name="about" type="text" value="" placeholder="Ссылка на картинку" required>
+          <form class="popup__content popup__content_tipe_add" name="form" novalidate>
+
+            <input class="popup__field popup__field_tipe_place"
+            id="name-input"
+            name="name"
+            type="text"
+            value=""
+            placeholder="Название"
+            minlength="2"
+            maxlength="30"
+            required>
+            <span class="name-input-error popup__field_type_error"></span>
+
+            <input class="popup__field popup__field_tipe_link"
+            id="link-input"
+            name="link"
+            type="url"
+            value=""
+            placeholder="Ссылка на картинку"
+            required>
+            <span class="link-input-error popup__field_type_error"></span>
+
             <button class="popup__button-save popup__button-save_add" name ="button_name_save" type="submit">Создать</button>
           </form>
         </div>
@@ -80,5 +120,6 @@
       </template>
 
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>

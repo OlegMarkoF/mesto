@@ -10,7 +10,6 @@ const popupCloseImageButtonElement = popupImageElement.querySelector('.popup__cl
 const popupOpenEditButtonElement = document.querySelector('.profile__edit-button');
 const popupOpenAddButtonElement = document.querySelector('.profile__add-button');
 const formElement = document.querySelector('.popup__content');
-const addFormElement = document.querySelector('.popup__content_tipe_add');
 const nameInput = document.querySelector('.popup__field_tipe_name');
 const jobInput = document.querySelector('.popup__field_tipe_job');
 const placeInput = document.querySelector('.popup__field_tipe_place');
@@ -21,6 +20,7 @@ const profileTextElement = document.querySelector('.profile__text');
 const elementsTemplate = document.querySelector('#elements-template').content;
 const elementsElement = document.querySelector('.elements__element');
 const sectionElements = document.querySelector('.elements');
+const popupButton = document.querySelectorAll('.popup__button-save'); //поиск кнопки изменен 
 const addButton = popupAddElement.querySelector('.popup__button-save_add');
 const deleteButton = document.querySelectorAll('.elements__delete');
 const popupSignature = document.querySelector('.popup__signature');
@@ -29,30 +29,31 @@ const maskGroupElement = document.querySelectorAll('.elements__mask-group');
 const titleElement = document.querySelectorAll('.elements__title');
 const cardFormSubmit = document.querySelector('.popup__content_tipe_add');
 
+
 const initialCards = [
   {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    name: 'Шир',
+    link: 'https://new-world-rpg.ru/wp-content/uploads/1/e/7/1e76dbd97fb3ddb92b0e4eb86989d553.jpeg'
   },
   {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    name: 'Пандора',
+    link: 'https://blogmickey.com/wp-content/uploads/2017/05/Pandora-environment-05072017-9.jpg'
   },
   {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    name: 'Эребор',
+    link: 'https://i.pinimg.com/originals/d8/88/48/d8884896b364a4751c4b3233e2f6dda3.jpg'
   },
   {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    name: '10 Королевство',
+    link: 'https://cdn.smartfacts.ru/387147/desyatoe-korolevstvo_0.jpg'
   },
   {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    name: 'Аграба',
+    link: 'https://images.stopgame.ru/uploads/images/262791/form/1397645241.jpg'
   },
   {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    name: 'Изумрудный город',
+    link: 'https://pic.rutubelist.ru/video/7b/fe/7bfec09506d0c8529b093d6c691ee3df.jpg'
   }
 ];
 
@@ -124,7 +125,16 @@ function closePopupByClickOnOverlay(evt) {
   if (evt.target == evt.currentTarget) {
     closePopup(popupEditElement);
     closePopup(popupAddElement);
-    closePopup(popupImageElement);}
+    closePopup(popupImageElement);
+  }
+}
+
+//Функии закрытия попап по Escape
+function closePopupByPressOnEscape(evt) {
+  if (evt.key === 'Escape') {
+    const closePopupByEscape = document.querySelector('.popup_opened');
+    closePopup(closePopupByEscape);
+  }
 }
 
 popupOpenEditButtonElement.addEventListener('click', () => {
@@ -138,4 +148,5 @@ popupCloseImageButtonElement.addEventListener('click',() => closePopup(popupImag
 popupEditElement.addEventListener('mousedown', closePopupByClickOnOverlay);
 popupAddElement.addEventListener('mousedown', closePopupByClickOnOverlay);
 popupImageElement.addEventListener('mousedown', closePopupByClickOnOverlay);
+document.addEventListener('keydown', closePopupByPressOnEscape);
 formElement.addEventListener('submit', handleFormSubmit);
