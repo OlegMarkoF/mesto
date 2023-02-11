@@ -1,21 +1,24 @@
-const formValidationConfig = {
+/*const formValidationConfig = {
   formElement: '.popup__content',
   formInput: '.popup__field',
-  inputErrorClass: 'popup__field_type-error',
+  inputErrorClass: 'popup__field_tipe-error',
 };
+*/
+
+const formInput = document.querySelector('.popup__field');
+const formError = formElement.querySelector(`.${formInput.id}-error`);
 
 // Добавляем класс с ошибкой
 function showInputError(formElement, formInput, errorMessage) {
   const formError = formElement.querySelector(`#${formInput.id}-error`);
-  formInput.classList.add('popup__field_type-error');
   formError.textContent = errorMessage;
 };
 
 // Удаляем класс с ошибкой
 function hideInputError(formElement, formInput) {
   const formError = formElement.querySelector(`#${formInput.id}-error`);
-  formInput.classList.remove('popup__field_type-error');
-  formError.classList.remove('popup__field-error_active');
+  formInput.classList.remove('popup__field_tipe-error');
+  //formError.classList.remove('popup__field_tipe-error_active');
   formError.textContent = '';
 }; 
 
