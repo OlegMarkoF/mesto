@@ -33,7 +33,7 @@
 @import url(../blocks/popup/__field/_tipe/popup__field_tipe_job.css);
 @import url(../blocks/popup/__field/_tipe/popup__field_tipe_place.css);
 @import url(../blocks/popup/__field/_tipe/popup__field_tipe_link.css);
-@import url(../blocks/popup/__field/_tipe/popup__field_tipe-error.css);
+@import url(../blocks/popup/__field/_tipe/popup__field-error.css);
 @import url(../blocks/popup/__content/popup__content.css);
 @import url(../blocks/popup/__content/_tipe/popup__content_tipe_add.css);
 @import url(../blocks/popup/__content/_tipe/popup__content_tipe_edit.css);

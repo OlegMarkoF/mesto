@@ -17,7 +17,7 @@ function showInputError(formElement, formInput, errorMessage) {
 // Удаляем класс с ошибкой
 function hideInputError(formElement, formInput) {
   const formError = formElement.querySelector(`#${formInput.id}-error`);
-  formInput.classList.remove('popup__field_tipe-error');
+  formInput.classList.remove('popup__field-error');
   //formError.classList.remove('popup__field_tipe-error_active');
   formError.textContent = '';
 }; 

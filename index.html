@@ -25,20 +25,17 @@
           <button class="profile__add-button" type="button"></button>
         </section>
         <section class="elements">
-          
         </section>
       </main>
       <footer class="footer">
         <p class="footer__paragraph">© 2020 Mesto Russia</p>
       </footer>
-      
       <!-- Popup Edit -->
       <section class="popup popup_edit">
         <div class="popup__container">
           <button class="popup__close popup__close_edit" type="button"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
           <form class="popup__content popup__content_tipe_edit" name="form" novalidate>
-
             <input class="popup__field popup__field_tipe_name"
               id="name"
               name="name"
@@ -48,8 +45,7 @@
               minlength="2"
               maxlength="40"
               required>
-              <span id="name-error" class="popup__field_tipe-error"></span>
-
+            <span id="name-error" class="popup__field-error"></span>
             <input class="popup__field popup__field_tipe_job"
               id="about"
               name="about"
@@ -59,45 +55,39 @@
               minlength="2"
               maxlength="200"
               required>
-              <span id="about-error" class="popup__field_tipe-error"></span>
-
+            <span id="about-error" class="popup__field-error"></span>
             <button class="popup__button-save popup__button-save_change" name ="button_name_save" type="submit">Сохранить</button>
           </form>
         </div>
       </section>
-
       <!-- Popup Add -->
       <section class="popup popup_add">
         <div class="popup__container">
           <button class="popup__close popup__close_add" type="button"></button>
           <h2 class="popup__title">Новое место</h2>
           <form class="popup__content popup__content_tipe_add" name="form" novalidate>
-
             <input class="popup__field popup__field_tipe_place"
-            id="place"
-            name="name"
-            type="text"
-            value=""
-            placeholder="Название"
-            minlength="2"
-            maxlength="30"
-            required>
-            <span id="place-error" class="popup__field_tipe-error"></span>
-
+              id="place"
+              name="name"
+              type="text"
+              value=""
+              placeholder="Название"
+              minlength="2"
+              maxlength="30"
+              required>
+            <span id="place-error" class="popup__field-error"></span>
             <input class="popup__field popup__field_tipe_link"
-            id="link"
-            name="link"
-            type="url"
-            value=""
-            placeholder="Ссылка на картинку"
-            required>
-            <span id="link-error" class="popup__field_tipe-error"></span>
-
+              id="link"
+              name="link"
+              type="url"
+              value=""
+              placeholder="Ссылка на картинку"
+              required>
+            <span id="link-error" class="popup__field-error"></span>
             <button class="popup__button-save popup__button-save_add" name ="button_name_save" type="submit">Создать</button>
           </form>
         </div>
       </section>
-
       <!-- Popup image -->
       <section class="popup popup_image">
         <figure class="popup__figure">
@@ -107,18 +97,16 @@
         </figure>
       </section>
     </div>
-    
-      <template id="elements-template">
-        <div class="elements__element">
-          <button class="elements__delete" type="button"></button>
-          <img class="elements__mask-group" src="#" alt="картинка">
-          <div class="elements__signature">
-            <h2 class="elements__title"></h2>
-            <button class="elements__group" type="button"></button>
-          </div>
+    <template id="elements-template">
+      <div class="elements__element">
+        <button class="elements__delete" type="button"></button>
+        <img class="elements__mask-group" src="#" alt="картинка">
+        <div class="elements__signature">
+          <h2 class="elements__title"></h2>
+          <button class="elements__group" type="button"></button>
+        </div>
       </div>
-      </template>
-
+    </template>
     <script src="./scripts/index.js"></script>
     <script src="./scripts/validate.js"></script>
   </body>
