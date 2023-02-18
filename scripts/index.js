@@ -94,6 +94,7 @@ cardFormSubmit.addEventListener('submit', function(evt) {
 
   sectionElement.prepend(newCard);
   closePopup(popupAddElement);
+  evt.target.reset();
   evt.submitter.classList.add('popup__button-save_disabled');
   evt.submitter.disabled = true;
 })
@@ -123,8 +124,7 @@ function closePopup(popup) {
 //Функии закрытия попап по Overlay
 function closePopupByClickOnOverlay(evt) {
   if (evt.target == evt.currentTarget) {
-    const closePopupByOverlay = document.querySelector('.popup_opened');
-    closePopup(closePopupByOverlay);
+    closePopup(evt.target);
   }
 }
 
@@ -136,7 +136,6 @@ function closePopupByPressOnEscape(evt) {
   }
 }
 
-//Спасибо. Это очень круто!! Надеюсь я научусь мыслить похожим образом
 buttonCloseList.forEach(btn => {
   const popup = btn.closest('.popup');
   btn.addEventListener('click', () => closePopup(popup));
