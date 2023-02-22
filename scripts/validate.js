@@ -18,7 +18,6 @@ function enableValidation(config) {
   });
 }
 
-
 // Показать сообщение об ошибке
 function showInputError(item, config) {
   const inputId = item.id;
@@ -47,13 +46,12 @@ function handleFormInput(item, config) {
   }
 };
 
-
 // Делаем кнопку не активной
 function toggleButtonState(form, config, buttonSaveForm) {
 
   const isFormValid = form.checkValidity();
   buttonSaveForm.disabled = !isFormValid;
-  buttonSaveForm.classList.toggle('popup__button-save_disabled', !isFormValid);
+  buttonSaveForm.classList.toggle(config.inactiveButtonClass, !isFormValid);
 }
 
 function addInputListeners(form, config, buttonSaveForm) {
@@ -66,6 +64,5 @@ function addInputListeners(form, config, buttonSaveForm) {
     });
   });
 }
-
 
 enableValidation(formValidationConfig);
