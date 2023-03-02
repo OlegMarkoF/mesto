@@ -1,3 +1,4 @@
+/*
 const formValidationConfig = {
   formSelector: '.popup__content',
   inputSelector: '.popup__field',
@@ -65,4 +66,4 @@ function addInputListeners(form, config, buttonSaveForm) {
   });
 }
 
-enableValidation(formValidationConfig);
+enableValidation(formValidationConfig); */
