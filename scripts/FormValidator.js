@@ -16,7 +16,7 @@ export default class FormValidator {
     this._resetValidation();
   }
 
-  // Очистка ошибок и управление кнопкой
+  // Сброс ошибок формы
   _resetValidation() {
     this._toggleButtonState();
     this._inputList.forEach((item) => {

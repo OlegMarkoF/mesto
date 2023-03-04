@@ -13,11 +13,7 @@ const placeInput = formAddElement.querySelector('.popup__field_tipe_place');
 const linkInput = formAddElement.querySelector('.popup__field_tipe_link');
 const profileTitleElement = document.querySelector('.profile__title');
 const profileTextElement = document.querySelector('.profile__text');
-//const elementsTemplate = document.querySelector('#elements-template').content;
-//const elementsElement = document.querySelector('.elements__element');
 const sectionElement = document.querySelector('.elements');
-//const addButton = popupAddElement.querySelector('.popup__button-save_add');
-//const popupFigure = document.querySelector('.popup__figure');
 const cardFormSubmit = document.querySelector('.popup__content_tipe_add');
 const buttonCloseList = document.querySelectorAll('.popup__close');
 
@@ -57,11 +53,14 @@ const initialCards = [
   }
 ];
 
+function createCard(item) {
+  const card = new Card(item, '#elements-template');
+  return card.generateCard();
+}
 
 // Добавление карточек из массива.
 initialCards.forEach(function (item) {
-  const card = new Card(item, '#elements-template');
-  const cardElement = card.createCard();
+  const cardElement = createCard(item);
   sectionElement.append(cardElement);
 });
 
@@ -72,8 +71,7 @@ cardFormSubmit.addEventListener('submit', function(evt) {
     name: placeInput.value,
     link: linkInput.value
   };
-  const card = new Card(dataPopup, '#elements-template');
-  const newCard = card.createCard();
+  const newCard = createCard(dataPopup);
   sectionElement.prepend(newCard);
 
   closePopup(popupAddElement);

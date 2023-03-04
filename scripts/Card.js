@@ -27,13 +27,13 @@ export default class Card {
   };
 
   // Добавление карточек
-  createCard() {
+  generateCard() {
     this._element = this._getTemplate();
-    
+    this._cardImage = this._element.querySelector('.elements__mask-group');
 
     this._element.querySelector('.elements__title').textContent = this._name;
-    this._element.querySelector('.elements__mask-group').src = this._link;
-    this._element.querySelector('.elements__mask-group').alt = this._name;
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
     
     this._element.querySelector('.elements__group').addEventListener('click', this._likeButton);
 
@@ -45,7 +45,7 @@ export default class Card {
   });
 
     // Попап Image
-    this._element.querySelector('.elements__mask-group').addEventListener('click', () => { 
+    this._cardImage.addEventListener('click', () => { 
       openPopup(popupImageElement);
       popupPhoto.src = this._link;
       popupSignature.textContent = this._name;
