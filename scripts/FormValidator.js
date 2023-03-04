@@ -1,33 +1,28 @@
-export const formValidationConfig = {
-  formSelector: '.popup__content',
-  inputSelector: '.popup__field',
-  inputErrorClass: 'popup__field-error',
-  submitButtonSelector: '.popup__button-save',
-  inactiveButtonClass: 'popup__button-save_disabled',
-  errorClass: 'popup__field_tipe_error'
-};
-
 export default class FormValidator {
-  constructor (data, formElement) {
+  constructor (config, formElement) {
     this._formElement = formElement;
-    this._formSelector = data.formSelector;
-    this._inputSelector = data.inputSelector;
-    this._inputErrorClass = data.inputErrorClass;
-    this._submitButtonSelector = data.submitButtonSelector;
-    this._inactiveButtonClass = data.inactiveButtonClass;
-    this._errorClass = data.errorClass;
-
+    this._formSelector = config.formSelector;
+    this._inputSelector = config.inputSelector;
+    this._inputErrorClass = config.inputErrorClass;
+    this._submitButtonSelector = config.submitButtonSelector;
+    this._inactiveButtonClass = config.inactiveButtonClass;
+    this._errorClass = config.errorClass;
+    this._buttonSaveForm = this._formElement.querySelector(this._submitButtonSelector);
+    this._inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
   };
 
-  
   enableValidation() {
-    const formList = Array.from(document.querySelectorAll(this._formSelector));
-    formList.forEach((form) => {
-      const buttonSaveForm = form.querySelector(this._submitButtonSelector);
-      
-      this._addInputListeners(form, buttonSaveForm);
-      this._toggleButtonState(form, buttonSaveForm);
+    this._addInputListeners();
+    this._resetValidation();
+  }
+
+  // Очистка ошибок и управление кнопкой
+  _resetValidation() {
+    this._toggleButtonState();
+    this._inputList.forEach((item) => {
+      this._hideInputError(item)
     });
+
   }
 
   // Показать сообщение об ошибке
@@ -56,27 +51,23 @@ export default class FormValidator {
   };
 
   // Делаем кнопку не активной
-  _toggleButtonState(form, buttonSaveForm) {
-
-    const isFormValid = form.checkValidity();
-    buttonSaveForm.disabled = !isFormValid;
-    buttonSaveForm.classList.toggle(this._inactiveButtonClass, !isFormValid);
+  _toggleButtonState() {
+    const isFormValid = this._formElement.checkValidity();
+    this._buttonSaveForm.disabled = !isFormValid;
+    this._buttonSaveForm.classList.toggle(this._inactiveButtonClass, !isFormValid);
   }
 
-  _addInputListeners(form, buttonSaveForm) {
-    const inputList = Array.from(document.querySelectorAll(this._inputSelector));
+  _addInputListeners() {
     
-    inputList.forEach((item) => {
+    this._inputList.forEach((item) => {
       item.addEventListener('input', () => {
         this._handleFormInput(item);
-        this._toggleButtonState(form, buttonSaveForm);
+        this._toggleButtonState();
       });
     });
   }
 
-      
+  
 }
 
-const addForm = document.forms['popup__content_tipe_add'];
-const addFormPopup = new FormValidator (formValidationConfig, addForm);
-addFormPopup.enableValidation();
+

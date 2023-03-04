@@ -1,3 +1,5 @@
+import Card from "./Card.js";
+import FormValidator from "./FormValidator.js";
 
 const popupEditElement = document.querySelector('.popup_edit');
 const popupAddElement = document.querySelector('.popup_add');
@@ -19,7 +21,14 @@ const sectionElement = document.querySelector('.elements');
 const cardFormSubmit = document.querySelector('.popup__content_tipe_add');
 const buttonCloseList = document.querySelectorAll('.popup__close');
 
-import Card from "./Card.js";
+const formValidationConfig = {
+  formSelector: '.popup__content',
+  inputSelector: '.popup__field',
+  inputErrorClass: 'popup__field-error',
+  submitButtonSelector: '.popup__button-save',
+  inactiveButtonClass: 'popup__button-save_disabled',
+  errorClass: 'popup__field_tipe_error'
+};
 
 const initialCards = [
   {
@@ -65,12 +74,11 @@ cardFormSubmit.addEventListener('submit', function(evt) {
   };
   const card = new Card(dataPopup, '#elements-template');
   const newCard = card.createCard();
-
   sectionElement.prepend(newCard);
+
   closePopup(popupAddElement);
   evt.target.reset();
-  evt.submitter.classList.add('popup__button-save_disabled');
-  evt.submitter.disabled = true;
+  addFormPopup.enableValidation();
 })
 
 // Данные профиля = данные попап
@@ -83,26 +91,28 @@ function handleEditFormSubmit(evt) {
   closePopup(popupEditElement);
 }
 
-// Функии открытия попап
+
+// Функция открытия попап
 export function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupByPressOnEscape);
 }
 
-// Функии закрытия попап
+// Функция закрытия попап
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', closePopupByPressOnEscape);
+  
 }
 
-//Функии закрытия попап по Overlay
+// Функция закрытия попап по Overlay
 function closePopupByClickOnOverlay(evt) {
   if (evt.target == evt.currentTarget) {
     closePopup(evt.target);
   }
 }
 
-//Функии закрытия попап по Escape
+// Функция закрытия попап по Escape
 function closePopupByPressOnEscape(evt) {
   if (evt.key === 'Escape') {
     const openedPopup = document.querySelector('.popup_opened');
@@ -115,10 +125,21 @@ buttonCloseList.forEach(btn => {
   btn.addEventListener('click', () => closePopup(popup));
   popup.addEventListener('mousedown', closePopupByClickOnOverlay);
 });
+
 popupOpenEditButtonElement.addEventListener('click', () => {
   nameInput.value = profileTitleElement.textContent;
   jobInput.value = profileTextElement.textContent;
-  openPopup(popupEditElement)
+  openPopup(popupEditElement);
 });
+
 popupOpenAddButtonElement.addEventListener('click', () => openPopup(popupAddElement));
 formEditElement.addEventListener('submit', handleEditFormSubmit);
+
+const addForm = document.querySelector('.popup__content_tipe_add');
+const addFormPopup = new FormValidator (formValidationConfig, addForm);
+addFormPopup.enableValidation();
+
+const editForm = document.querySelector('.popup__content_tipe_edit'); 
+const editFormPopup = new FormValidator (formValidationConfig, editForm);
+editFormPopup.enableValidation();
+

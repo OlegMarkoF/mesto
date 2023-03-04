@@ -21,23 +21,28 @@ export default class Card {
     return cardElement;
   }
 
+  // Лайк
+  _likeButton(evt) { 
+    evt.target.classList.toggle('elements__group_active');
+  };
+
   // Добавление карточек
   createCard() {
     this._element = this._getTemplate();
+    
 
     this._element.querySelector('.elements__title').textContent = this._name;
     this._element.querySelector('.elements__mask-group').src = this._link;
     this._element.querySelector('.elements__mask-group').alt = this._name;
     
-    // Лайк
-    this._element.querySelector('.elements__group').addEventListener('click', function(evt){ 
-      evt.target.classList.toggle('elements__group_active');
-    });
+    this._element.querySelector('.elements__group').addEventListener('click', this._likeButton);
+
 
     // Удаление карточки
     this._element.querySelector('.elements__delete').addEventListener('click', () => {
-      this._element.remove();
-    });
+    this._element.remove();
+    this._element = null;
+  });
 
     // Попап Image
     this._element.querySelector('.elements__mask-group').addEventListener('click', () => { 
