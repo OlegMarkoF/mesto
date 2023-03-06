@@ -73,10 +73,9 @@ cardFormSubmit.addEventListener('submit', function(evt) {
   };
   const newCard = createCard(dataPopup);
   sectionElement.prepend(newCard);
-
-  closePopup(popupAddElement);
   evt.target.reset();
-  addFormPopup.enableValidation();
+  closePopup(popupAddElement);
+  
 })
 
 // Данные профиля = данные попап
@@ -94,6 +93,8 @@ function handleEditFormSubmit(evt) {
 export function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupByPressOnEscape);
+  addFormPopup._resetValidation();
+  editFormPopup._resetValidation();
 }
 
 // Функция закрытия попап
@@ -133,11 +134,11 @@ popupOpenEditButtonElement.addEventListener('click', () => {
 popupOpenAddButtonElement.addEventListener('click', () => openPopup(popupAddElement));
 formEditElement.addEventListener('submit', handleEditFormSubmit);
 
-const addForm = document.querySelector('.popup__content_tipe_add');
-const addFormPopup = new FormValidator (formValidationConfig, addForm);
-addFormPopup.enableValidation();
 
 const editForm = document.querySelector('.popup__content_tipe_edit'); 
 const editFormPopup = new FormValidator (formValidationConfig, editForm);
 editFormPopup.enableValidation();
 
+const addForm = document.querySelector('.popup__content_tipe_add');
+const addFormPopup = new FormValidator (formValidationConfig, addForm);
+addFormPopup.enableValidation();

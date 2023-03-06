@@ -13,7 +13,6 @@ export default class FormValidator {
 
   enableValidation() {
     this._addInputListeners();
-    this._resetValidation();
   }
 
   // Сброс ошибок формы
@@ -22,7 +21,6 @@ export default class FormValidator {
     this._inputList.forEach((item) => {
       this._hideInputError(item)
     });
-
   }
 
   // Показать сообщение об ошибке
@@ -58,8 +56,8 @@ export default class FormValidator {
   }
 
   _addInputListeners() {
-    
     this._inputList.forEach((item) => {
+      this._resetValidation();
       item.addEventListener('input', () => {
         this._handleFormInput(item);
         this._toggleButtonState();
