@@ -16,6 +16,9 @@ const profileTextElement = document.querySelector('.profile__text');
 const sectionElement = document.querySelector('.elements');
 const cardFormSubmit = document.querySelector('.popup__content_tipe_add');
 const buttonCloseList = document.querySelectorAll('.popup__close');
+const popupImageElement = document.querySelector('.popup_image');
+const popupPhoto = document.querySelector('.popup__photo');
+const popupSignature = document.querySelector('.popup__signature');
 
 const formValidationConfig = {
   formSelector: '.popup__content',
@@ -54,7 +57,7 @@ const initialCards = [
 ];
 
 function createCard(item) {
-  const card = new Card(item, '#elements-template');
+  const card = new Card(item, '#elements-template', popupImage);
   return card.generateCard();
 }
 
@@ -88,20 +91,18 @@ function handleEditFormSubmit(evt) {
   closePopup(popupEditElement);
 }
 
-
 // Функция открытия попап
 export function openPopup(popup) {
   popup.classList.add('popup_opened');
-  document.addEventListener('keydown', closePopupByPressOnEscape);
-  addFormPopup._resetValidation();
-  editFormPopup._resetValidation();
-}
+  document.addEventListener('keydown', closePopupByPressOnEscape); 
+} 
+
+// Да, это более чем логично) Прошу меня извинить :)
 
 // Функция закрытия попап
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', closePopupByPressOnEscape);
-  
 }
 
 // Функция закрытия попап по Overlay
@@ -119,19 +120,36 @@ function closePopupByPressOnEscape(evt) {
   }
 }
 
+// Попап профиля
+function profilePopup() {
+  nameInput.value = profileTitleElement.textContent;
+  jobInput.value = profileTextElement.textContent;
+  editFormPopup.resetValidation();
+  openPopup(popupEditElement);
+};
+
+// Попап создания новой карточки
+function newCardPopup() {
+  addFormPopup.resetValidation();
+  openPopup(popupAddElement);
+};
+
+// Попап Image
+function popupImage(name, link) {
+  popupPhoto.src = link;
+  popupSignature.textContent = name;
+  popupPhoto.alt = name;
+  openPopup(popupImageElement);
+};
+
 buttonCloseList.forEach(btn => {
   const popup = btn.closest('.popup');
   btn.addEventListener('click', () => closePopup(popup));
   popup.addEventListener('mousedown', closePopupByClickOnOverlay);
 });
 
-popupOpenEditButtonElement.addEventListener('click', () => {
-  nameInput.value = profileTitleElement.textContent;
-  jobInput.value = profileTextElement.textContent;
-  openPopup(popupEditElement);
-});
-
-popupOpenAddButtonElement.addEventListener('click', () => openPopup(popupAddElement));
+popupOpenEditButtonElement.addEventListener('click', profilePopup);
+popupOpenAddButtonElement.addEventListener('click', newCardPopup);
 formEditElement.addEventListener('submit', handleEditFormSubmit);
 
 

@@ -1,14 +1,9 @@
-import {openPopup} from './index.js';
-const popupPhoto = document.querySelector('.popup__photo');
-const popupSignature = document.querySelector('.popup__signature');
-const popupImageElement = document.querySelector('.popup_image');
-
-
 export default class Card {
-  constructor (data, templateSelector) {
+  constructor (data, templateSelector, popupImage) {
     this._name = data.name;
     this._link = data.link;
     this._templateSelector = templateSelector;
+    this._popupImage = popupImage;
   }
 
   _getTemplate() {
@@ -22,11 +17,9 @@ export default class Card {
   }
 
   // Лайк
-  _cardLike(evt) { 
-    evt.target.classList.toggle('elements__group_active');
- // this._likeButton.classList.toggle('elements__group_active'); Не смог разобраться.
- // Если я пишу так, то this._likeButton is undefined. Оставил как есть.
-  };
+  _likeCard(evt) { 
+    this._likeButton.classList.toggle('elements__group_active');
+  }; // Это все моя невнимательность:( Но я над этим работаю!
 
   // Удаление карточки
   _deleteCard() {
@@ -34,15 +27,6 @@ export default class Card {
     this._element = null;
   }
   
-  // Попап Image
-  _popupImage() {
-    openPopup(popupImageElement);
-    popupPhoto.src = this._link;
-    popupSignature.textContent = this._name;
-    popupPhoto.alt = this._name;
-
-  }
-
   // Добавление карточек
   generateCard() {
     this._element = this._getTemplate();
@@ -54,9 +38,9 @@ export default class Card {
     this._cardImage.src = this._link;
     this._cardImage.alt = this._name;
     
-    this._likeButton.addEventListener('click', this._cardLike);
+    this._likeButton.addEventListener('click', () => this._likeCard());
     this._deleteButton.addEventListener('click', () => this._deleteCard());  
-    this._cardImage.addEventListener('click', () => this._popupImage());
+    this._cardImage.addEventListener('click', () => this._popupImage(this._name, this._link));
 
     return this._element;
   }

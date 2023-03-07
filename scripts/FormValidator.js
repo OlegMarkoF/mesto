@@ -16,7 +16,7 @@ export default class FormValidator {
   }
 
   // Сброс ошибок формы
-  _resetValidation() {
+  resetValidation() {
     this._toggleButtonState();
     this._inputList.forEach((item) => {
       this._hideInputError(item)
@@ -57,7 +57,7 @@ export default class FormValidator {
 
   _addInputListeners() {
     this._inputList.forEach((item) => {
-      this._resetValidation();
+      this.resetValidation();
       item.addEventListener('input', () => {
         this._handleFormInput(item);
         this._toggleButtonState();
