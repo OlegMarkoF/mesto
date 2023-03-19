@@ -1,9 +1,9 @@
 export default class Card {
-  constructor (data, templateSelector, popupImage) {
+  constructor (data, templateSelector, handleCardClick) {
     this._name = data.name;
     this._link = data.link;
     this._templateSelector = templateSelector;
-    this._popupImage = popupImage;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -17,9 +17,9 @@ export default class Card {
   }
 
   // Лайк
-  _likeCard(evt) { 
+  _likeCard() { 
     this._likeButton.classList.toggle('elements__group_active');
-  }; // Это все моя невнимательность:( Но я над этим работаю!
+  };
 
   // Удаление карточки
   _deleteCard() {
@@ -40,7 +40,7 @@ export default class Card {
     
     this._likeButton.addEventListener('click', () => this._likeCard());
     this._deleteButton.addEventListener('click', () => this._deleteCard());  
-    this._cardImage.addEventListener('click', () => this._popupImage(this._name, this._link));
+    this._cardImage.addEventListener('click', () => this._handleCardClick(this._name, this._link));
 
     return this._element;
   }

@@ -55,6 +55,7 @@ export default class FormValidator {
     this._buttonSaveForm.classList.toggle(this._inactiveButtonClass, !isFormValid);
   }
 
+  // Добавляем слушатель инпутов
   _addInputListeners() {
     this._inputList.forEach((item) => {
       this.resetValidation();
