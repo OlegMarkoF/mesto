@@ -43,5 +43,3 @@ export const profileTextElement = document.querySelector('.profile__text');
 export const buttonCloseList = document.querySelectorAll('.popup__close');
 export const nameInput = document.querySelector('.popup__field_tipe_name');
 export const jobInput = document.querySelector('.popup__field_tipe_job');
-//const placeInput = formAddElement.querySelector('.popup__field_tipe_place');
-//const linkInput = formAddElement.querySelector('.popup__field_tipe_link');

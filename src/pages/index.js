@@ -1,11 +1,10 @@
-import '../pages/index.css';
-import Card from './Card.js';
-import Popup from './Popup.js';
-import FormValidator from './FormValidator.js';
-import PopupWithImage from './PopupWithImage.js';
-import PopupWithForm from './PopupWithForm.js';
-import UserInfo from './UserInfo.js';
-import Section from './Section.js';
+import './index.css';
+import Card from '../components/Card.js';
+import FormValidator from '../components/FormValidator.js';
+import PopupWithImage from '../components/PopupWithImage.js';
+import PopupWithForm from '../components/PopupWithForm.js';
+import UserInfo from '../components/UserInfo.js';
+import Section from '../components/Section.js';
 
 import {
   initialCards,
@@ -34,15 +33,16 @@ const createCardList = new Section({
 createCardList.renderItems(initialCards);
 
 // Попап профиля
-function profilePopup() {
-  nameInput.value = profileTitleElement.textContent;
-  jobInput.value = profileTextElement.textContent;
+function openPopupProfile() {
+  const userData = userInfo.getUserInfo();
+  nameInput.value = userData.name;
+  jobInput.value = userData.about;
   editFormPopup.resetValidation();
   editForm.open();
 };
 
 // Попап создания новой карточки
-function newCardPopup() {
+function openCardPopup() {
   addFormPopup.resetValidation();
   addForm.open();
 };
@@ -79,5 +79,5 @@ const addFormElement = document.querySelector('.popup__content_tipe_add');
 const addFormPopup = new FormValidator (formValidationConfig, addFormElement);
 addFormPopup.enableValidation();
 
-popupOpenEditButtonElement.addEventListener('click', profilePopup);
-popupOpenAddButtonElement.addEventListener('click', newCardPopup);
+popupOpenEditButtonElement.addEventListener('click', openPopupProfile);
+popupOpenAddButtonElement.addEventListener('click', openCardPopup);
