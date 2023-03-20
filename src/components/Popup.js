@@ -2,25 +2,23 @@ export default class Popup {
   constructor (popupSelector) {
     this._popupSelector = popupSelector;
     this._popup = document.querySelector(this._popupSelector);
-    this._closeButton = (evt) => this._handleEscape(evt);
+    this._handleEscape = (evt) => this._handleEscClose(evt);
   }
 
   // Oткрытиe попап
   open() {
     this._popup.classList.add('popup_opened');
-    document.addEventListener('keyup', this._closeButton);
-    
-    this.setEventListeners();
+    document.addEventListener('keyup', this._handleEscape);
   } 
   
   // Закрытиe попап
   close() {
     this._popup.classList.remove('popup_opened');
-    document.removeEventListener('keyup', this._closeButton);
+    document.removeEventListener('keyup', this._handleEscape);
   }
 
   // Закрытиe попап по Esc
-  _handleEscape(evt) {
+  _handleEscClose(evt) {
     if (evt.key === 'Escape') {
       this.close();
     }

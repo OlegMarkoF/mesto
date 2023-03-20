@@ -48,6 +48,7 @@ function openCardPopup() {
 };
 
 const popupImage = new PopupWithImage('.popup_image');
+popupImage.setEventListeners();
 
 const userInfo = new UserInfo({
   profileName: '.profile__title',
