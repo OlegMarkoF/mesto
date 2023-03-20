@@ -15,7 +15,7 @@ import {
   profileTextElement,
   nameInput,
   jobInput
-} from '../constants/constants.js';
+} from '../utils/constants.js';
 
 
 function createCard(item) {
