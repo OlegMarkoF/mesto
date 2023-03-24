@@ -11,8 +11,6 @@ import {
   formValidationConfig,
   popupOpenAddButtonElement,
   popupOpenEditButtonElement,
-  profileTitleElement,
-  profileTextElement,
   nameInput,
   jobInput
 } from '../utils/constants.js';
