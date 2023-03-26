@@ -54,6 +54,10 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/profile/__add-button/profile__add-button.css ***!
   \*********************************************************************************************************************************************************************************/
 .profile__add-button{align-self:center;background:no-repeat 50% url(images/Add_Button.13997fdf54b4cb323817.svg);border:2px solid #fff;border-radius:2px;cursor:pointer;height:50px;justify-self:end;margin:0;padding:0;transition:opacity .5s ease-in-out;width:150px}.profile__add-button:hover{opacity:.6}@media (max-width:800px){.profile__add-button{align-content:center;background:no-repeat 50% url(images/AddButton.8e041299935e2fbbe15e.svg);justify-self:center;margin-top:33px;width:282px}}
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/profile/__edit-avatar/profile__edit-avatar.css ***!
+  \***********************************************************************************************************************************************************************************/
+.profile__edit-avatar{background:no-repeat 50% url(images/pen.a086f758840ae814ecde.svg);cursor:pointer;height:26px;margin:auto;transition:opacity .5s ease-in-out;width:26px;z-index:2}.profile__edit-avatar:hover{opacity:.8}
 /*!**********************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/elements/elements.css ***!
   \**********************************************************************************************************************************************************/
