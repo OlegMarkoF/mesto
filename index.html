@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Олег Марков">
     <title>Mesto</title>
-  <script defer src="main.a4143c71a87f7a99ed71.js"></script><link href="main.css" rel="stylesheet"></head>
+  <script defer src="main.59daf7b5c40bff614881.js"></script><link href="main.css" rel="stylesheet"></head>
   <body>
     <div class="page">
       <header class="header">
@@ -98,7 +98,36 @@
           <figcaption class="popup__signature"></figcaption>
         </figure>
       </section>
+      <!-- Popup delete -->
+      <section class="popup popup_delete">
+        <div class="popup__container popup__container_delete">
+          <button class="popup__close popup__close_delete" type="button"></button>
+          <h2 class="popup__title popup__title_delete">Вы уверены?</h2>
+          <form class="popup__content popup__content_tipe_delete" name="form" novalidate>
+            <button class="popup__button-save popup__button-save_delete" name ="button_name_delete" type="submit">Да</button>
+          </form>
+        </div>
+      </section>
+      <!-- Popup avatar -->
+      <section class="popup popup_avatar">
+        <div class="popup__container popup__container_avatar">
+          <button class="popup__close popup__close_avatar" type="button"></button>
+          <h2 class="popup__title">Обновить аватар</h2>
+          <form class="popup__content popup__content_tipe_avatar" name="form" novalidate>
+            <input class="popup__field popup__field_tipe_link"
+              id="link"
+              name="link"
+              type="url"
+              value=""
+              placeholder="Ссылка на картинку"
+              required>
+            <span id="link-error" class="popup__field-error"></span>
+            <button class="popup__button-save popup__button-save_avatar" name ="button_name_save" type="submit">Сохранить</button>
+          </form>
+        </div>
+      </section>
     </div>
+    <!-- Тemplate -->
     <template id="elements-template">
       <div class="elements__element">
         <button class="elements__delete" type="button"></button>
