@@ -6,10 +6,11 @@ export default class PopupWithForm extends Popup {
     this._handleSubmitForm = handleSubmitForm;
     this._form = this._popup.querySelector('.popup__content');
     this._inputList = this._form.querySelectorAll('.popup__field');
-    
+    this._buttonSave = this._form.querySelector('.popup__button-save');
+    this._textButton = this._buttonSave.textContent;
   }
 
-  _getInputValues() {
+  getInputValues() {
     this._inputValues = {};
     this._inputList.forEach((item) => {
       this._inputValues[item.name] = item.value;
@@ -19,18 +20,25 @@ export default class PopupWithForm extends Popup {
 
   _submitForm = (evt) => {
     evt.preventDefault();
-    this._handleSubmitForm(this._getInputValues());
-    console.log(this._getInputValues());
+    this._handleSubmitForm(this.getInputValues());
     this.close();
   };
 
   //Установить слушатели
   setEventListeners() {
     super.setEventListeners();
-    //this._submitForm();
     this._form.addEventListener('submit', this._submitForm);
   }
-  
+
+  //Отобразить состояние загрузки
+  renderLoading(isLoading) {
+    if (isLoading) {
+      this._buttonSave.textContent = `Сохранение...`;
+    } else {
+      this._buttonSave.textContent = this._textButton;
+    }
+  }
+
   //Закрыть Попап
   close() {
     super.close();

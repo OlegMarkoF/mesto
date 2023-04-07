@@ -1,4 +1,4 @@
-export const initialCards = [
+/*export const initialCards = [
     {
       name: 'Шир',
       link: 'https://new-world-rpg.ru/wp-content/uploads/1/e/7/1e76dbd97fb3ddb92b0e4eb86989d553.jpeg'
@@ -24,7 +24,7 @@ export const initialCards = [
       link: 'https://pic.rutubelist.ru/video/7b/fe/7bfec09506d0c8529b093d6c691ee3df.jpg'
     }
   ];
-
+*/
 export const formValidationConfig = {
   formSelector: '.popup__content',
   inputSelector: '.popup__field',
@@ -36,8 +36,13 @@ export const formValidationConfig = {
 
 export const popupEditElement = document.querySelector('.popup_edit');
 export const popupAddElement = document.querySelector('.popup_add');
+export const popupOpenEditAvatar = document.querySelector('.profile__edit-avatar');
 export const popupOpenEditButtonElement = document.querySelector('.profile__edit-button');
 export const popupOpenAddButtonElement = document.querySelector('.profile__add-button');
 export const buttonCloseList = document.querySelectorAll('.popup__close');
 export const nameInput = document.querySelector('.popup__field_tipe_name');
 export const jobInput = document.querySelector('.popup__field_tipe_job');
+export const deleteButton = document.querySelector('.popup__button-save_delete');
+export const editFormElement = document.querySelector('.popup__content_tipe_edit');
+export const addFormElement = document.querySelector('.popup__content_tipe_add');
+export const avatarFormElement = document.querySelector('.popup__content_tipe_avatar');
