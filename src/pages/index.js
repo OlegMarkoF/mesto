@@ -105,7 +105,6 @@ function createCard(item) {
     },
     confirmDelete: () => {
       formConfirmDeletion.open(card);
-      
     }
   }, 
   '#elements-template',
@@ -148,13 +147,13 @@ const formEditProfile = new PopupWithForm({
     api.newUserInfo(inputValues)
     .then((newData) => {
       userInfo.setUserInfo(newData);
+      formEditProfile.close();
     })
     .catch((err) => {
       console.log(err);
     })
     .finally(() => {
       formEditProfile.renderLoading(false);
-      formEditProfile.close();
     })
   }
 }); 
@@ -167,13 +166,13 @@ const formAddCard = new PopupWithForm({
     api.addCard(item)
     .then((added) => {
       cardList.addItem(createCard(added));
+      formAddCard.close();
     })
     .catch((err) => {
       console.log(err);
     })
     .finally(() => {
       formAddCard.renderLoading(false);
-      formAddCard.close();
     })
   }
 });
@@ -186,13 +185,13 @@ const avatarForm = new PopupWithForm({
     api.editAvatar(data)
     .then((data) => {
       userInfo.setUserAvatar(data);
+      avatarForm.close();
     })
     .catch((err) => {
       console.log(err);
     })
     .finally(() => {
-      avatarForm.renderLoading(false)
-      avatarForm.close();
+      avatarForm.renderLoading(false);
     })
   }
 });
